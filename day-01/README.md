@@ -1,3 +1,6 @@
+🚀 Day 01 - 40 Days of JavaScript
+This repository contains my solutions for Day 01 of the 40 Days of JavaScript challenge from tapaScript.
+
 ✅ Task 1: Setting Up Your Environment - Install VS Code (if not installed). (done ✅) - Set up Live Server or open the HTML file directly in a browser (done ✅) - Open the DevTools Console (Right-click → Inspect → Console). (done ✅)
 
 ✅ Task 2: Write Your First JavaScript Code - answer in : index.html and script.js
