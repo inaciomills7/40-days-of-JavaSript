@@ -17,11 +17,11 @@ The focus of this day is mastering loops and improving logical thinking using:
 
 Generated a pyramid pattern using nested loops:
 
-`*
- * * 
- * * * 
- * * * * 
- * * * * *`
+*
+* * 
+* * * 
+* * * * 
+* * * * *
 
 ✅ 2. Multiplication Table
 
