@@ -1,5 +1,5 @@
 🚀 Day 02 - 40 Days of JavaScript
-This repository contains my solutions for Day 03 of the 40 Days of JavaScript challenge from tapaScript.
+This repository contains my solutions for Day 02 of the 40 Days of JavaScript challenge from tapaScript.
 
 # Reassign `let` vs `const`
 
