@@ -1,4 +1,4 @@
-````markdown
+
 # Day 12 – JavaScript Object Manipulation and Problem Solving
 
 Welcome to **Day 12** of the 40-day JavaScript challenge!  
@@ -16,7 +16,7 @@ Below is a summary of **10 tasks** completed with explanations and examples.
 const user = { name: "Alex", age: undefined };
 console.log(user.age ?? "Not provided"); // Output: "Not provided"
 ```
-````
+
 
 **Explanation:**
 The `??` operator returns the right-hand side only if the left-hand side is `null` or `undefined`. Since `user.age` is `undefined`, it returns `"Not provided"`.
