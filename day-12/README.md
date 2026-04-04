@@ -106,7 +106,6 @@ console.log(`Average Grade: ${student.calculateAverageGrade()}`); // Output: Ave
 ```
 
 **Explanation:**
-
 In this code, we define a student object with properties for the student's name, ID, age, and grades. We also implement a method called `calculateAverageGrade()` that calculates the average grade by summing all the grades and dividing by the number of subjects. Finally, we log the student's details and the average grade to the console.
 
 ---
@@ -159,8 +158,7 @@ const bookStore = {
 ```
 
 **Explanation:**
-
-//In this code, we define a bookStore object that contains an inventory of books, each with an author and quantity. The checkAvailability method checks if a book is in stock and returns the quantity available. The restockBook method allows us to add new books or increase the quantity of existing books. The sellBook method allows us to sell a specified quantity of a book, checking for valid input and ensuring that there is enough stock before completing the sale. Finally, we demonstrate the functionality by checking availability, restocking a book, and selling a book.
+In this code, we define a bookStore object that contains an inventory of books, each with an author and quantity. The checkAvailability method checks if a book is in stock and returns the quantity available. The restockBook method allows us to add new books or increase the quantity of existing books. The sellBook method allows us to sell a specified quantity of a book, checking for valid input and ensuring that there is enough stock before completing the sale. Finally, we demonstrate the functionality by checking availability, restocking a book, and selling a book.
 
 ---
 
