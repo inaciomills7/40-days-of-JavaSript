@@ -101,7 +101,8 @@ const bookStore = {
   },
 
   checkAvailability: function (title) {
-    const book = this.inventory[title];
+    const key = title.lowerCase();
+    const book = this.inventory[key];
 
     if (!book) return "Book not found";
     return book.quantity > 0
