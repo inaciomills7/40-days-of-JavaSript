@@ -1,4 +1,20 @@
-#**Task 1. Create a table of two columns, situation and value. Now add the rows for every situations and the value of this in that situation. Please cover the following situations**
+# 📘 Day 13 – Mastering `this` in JavaScript
+
+## 🚀 Overview
+
+Day 13 focused on deeply understanding the behavior of the `this` keyword in JavaScript across different scenarios, including:
+- Object methods
+- Arrow functions
+- Function detachment
+- Nested functions
+- Constructor functions
+- Method borrowing
+
+Understanding `this` is essential for writing clean, predictable, and bug-free JavaScript code.
+
+---
+
+# 📘 Task 1. Create a table of two columns, situation and value. Now add the rows for every situations and the value of this in that situation. Please cover the following situations**
 
 - At the Global
 - Inside an Object Method
