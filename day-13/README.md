@@ -14,7 +14,7 @@ Understanding `this` is essential for writing clean, predictable, and bug-free J
 
 ---
 
-# 📘 Task 1. Create a table of two columns, situation and value. Now add the rows for every situations and the value of this in that situation. Please cover the following situations**
+## 📘 Task 1. Create a table of two columns, situation and value. Now add the rows for every situations and the value of this in that situation. Please cover the following situations**
 
 - At the Global
 - Inside an Object Method
@@ -24,13 +24,13 @@ Understanding `this` is essential for writing clean, predictable, and bug-free J
 - Inside an object created with the Constructor Function
 - Please add examples for each of the scenarios.
 
-## 📘 Understanding `this` in JavaScript
+### 📘 Understanding `this` in JavaScript
 
 This guide explains how the `this` keyword behaves in different situations in JavaScript, along with examples.
 
 ---
 
-## 📊 Summary Table
+### 📊 Summary Table
 
 | Situation                      | Value of `this`                                   |
 | ------------------------------ | ------------------------------------------------- |
@@ -78,7 +78,7 @@ obj.method();
 
 ---
 
-## 3️⃣ Standalone Non-Arrow Function
+### 3️⃣ Standalone Non-Arrow Function
 
 ```js
 function standaloneFunction() {
@@ -95,7 +95,7 @@ standaloneFunction();
 
 ---
 
-## 4️⃣ Arrow Function (Standalone)
+### 4️⃣ Arrow Function (Standalone)
 
 ```js
 const arrowFunction = () => {
@@ -112,7 +112,7 @@ arrowFunction();
 
 ---
 
-## 5️⃣ Arrow Function as Object Method
+### 5️⃣ Arrow Function as Object Method
 
 ```js
 const objWithArrow = {
@@ -134,7 +134,7 @@ objWithArrow.arrowMethod();
 
 ---
 
-## 6️⃣ Constructor Function
+### 6️⃣ Constructor Function
 
 ```js
 function ConstructorFunction(name) {
@@ -152,7 +152,7 @@ const instance = new ConstructorFunction("Constructor Instance");
 
 ---
 
-## 7️⃣ Arrow Function Inside a Normal Method
+### 7️⃣ Arrow Function Inside a Normal Method
 
 ```js
 const objWithNormalFunction = {
@@ -177,7 +177,7 @@ objWithNormalFunction.normalMethod();
 
 ---
 
-## 🧠 Key Rules to Remember
+### 🧠 Key Rules to Remember
 
 1. `this` depends on **how a function is called**, not where it is defined.
 2. Arrow functions **do not bind `this`** — they inherit it.
@@ -189,7 +189,7 @@ objWithNormalFunction.normalMethod();
 
 ---
 
-## 🚀 Bonus: `call`, `apply`, and `bind`
+### 🚀 Bonus: `call`, `apply`, and `bind`
 
 ```js
 function test() {
@@ -208,15 +208,15 @@ test.call({ name: "Custom" });
 
 ---
 
-## 📌 Final Summary
+### 📌 Final Summary
 
 Understanding `this` is essential in JavaScript. The behavior changes depending on execution context, making it one of the most important concepts to master for writing clean and predictable code.
 
 ---
 
-# 📘 Task 2 – Fixing `this` in an Object Method (Arrow Function Issue)
+## 📘 Task 2 – Fixing `this` in an Object Method (Arrow Function Issue)
 
-## 🚀 Problem Statement
+### 🚀 Problem Statement
 
 Given the following code:
 
@@ -231,7 +231,7 @@ const user = {
 user.greet();
 ```
 
-### ❌ Output:
+#### ❌ Output:
 
 ```
 Hello, undefined!
@@ -239,18 +239,18 @@ Hello, undefined!
 
 ---
 
-## 🔍 Why Does This Happen?
+### 🔍 Why Does This Happen?
 
 The issue is caused by the use of an **arrow function** as an object method.
 
-### ⚠️ Key Rule:
+#### ⚠️ Key Rule:
 
 > Arrow functions **do NOT have their own `this`**.
 > They inherit `this` from their **lexical (outer) scope**.
 
 ---
 
-### 🧠 What’s happening here?
+#### 🧠 What’s happening here?
 
 - The `greet` method is an arrow function.
 - It does **not bind `this` to the `user` object**.
@@ -267,7 +267,7 @@ this.name; // undefined
 
 ---
 
-## ✅ Solution 1: Use a Regular Function (Recommended)
+### ✅ Solution 1: Use a Regular Function (Recommended)
 
 ```js
 const user = {
@@ -280,7 +280,7 @@ const user = {
 user.greet(); // Hello, tapaScript!
 ```
 
-### ✔️ Why it works:
+#### ✔️ Why it works:
 
 - Regular functions have their **own `this`**
 - When called as a method:
@@ -293,7 +293,7 @@ user.greet(); // Hello, tapaScript!
 
 ---
 
-## ✅ Solution 2: Arrow Function Inside a Regular Method
+### ✅ Solution 2: Arrow Function Inside a Regular Method
 
 ```js
 const user = {
@@ -309,14 +309,14 @@ const user = {
 user.greet(); // Hello, tapaScript!
 ```
 
-### ✔️ Why it works:
+#### ✔️ Why it works:
 
 - The outer function (`greet`) has correct `this` (`user`)
 - The arrow function inherits `this` from `greet`
 
 ---
 
-## 🧠 Key Takeaways
+### 🧠 Key Takeaways
 
 - ❌ Never use arrow functions as object methods when you need `this`
 - ✅ Use regular functions for methods
@@ -326,16 +326,16 @@ user.greet(); // Hello, tapaScript!
 
 ---
 
-## 🎯 Final Insight
+### 🎯 Final Insight
 
 > `this` is determined by **how a function is called**,
 > but arrow functions ignore this rule and **inherit from their surrounding scope**.
 
 ---
 
-# 📘 Task 3 – Losing `this` When Detaching a Method
+## 📘 Task 3 – Losing `this` When Detaching a Method
 
-## 🚀 Problem Statement
+### 🚀 Problem Statement
 
 Consider the following code:
 
@@ -351,7 +351,7 @@ const greetFn = obj.greet;
 greetFn();
 ```
 
-### ❌ Output:
+#### ❌ Output:
 
 ```
 Hello, undefined!
@@ -359,15 +359,15 @@ Hello, undefined!
 
 ---
 
-## 🔍 Why Does This Happen?
+### 🔍 Why Does This Happen?
 
-### ⚠️ Key Rule:
+#### ⚠️ Key Rule:
 
 > `this` is determined by **how a function is called**, not where it is defined.
 
 ---
 
-### 🧠 What’s happening step by step:
+#### 🧠 What’s happening step by step:
 
 1. `obj.greet` is a method → normally `this` would refer to `obj`
 
@@ -399,61 +399,61 @@ this.name; // undefined
 
 ---
 
-## ✅ Solutions
+### ✅ Solutions
 
-### ✔️ Solution 1: Use `bind` (Best for permanent fix)
+#### ✔️ Solution 1: Use `bind` (Best for permanent fix)
 
 ```js
 const boundGreet = obj.greet.bind(obj);
 boundGreet(); // Hello, Tom!
 ```
 
-### ✔️ Why it works:
+#### ✔️ Why it works:
 
 - `bind()` creates a **new function**
 - It permanently sets `this` to `obj`
 
 ---
 
-### ✔️ Solution 2: Use `call`
+#### ✔️ Solution 2: Use `call`
 
 ```js
 greetFn.call(obj); // Hello, Tom!
 ```
 
-### ✔️ Why it works:
+#### ✔️ Why it works:
 
 - `call()` invokes the function immediately
 - Explicitly sets `this` to `obj`
 
 ---
 
-### ✔️ Solution 3: Use `apply`
+#### ✔️ Solution 3: Use `apply`
 
 ```js
 greetFn.apply(obj); // Hello, Tom!
 ```
 
-### ✔️ Why it works:
+#### ✔️ Why it works:
 
 - Same as `call()`, but arguments are passed as an array
 
 ---
 
-### ✔️ Solution 4: Call the method directly
+#### ✔️ Solution 4: Call the method directly
 
 ```js
 obj.greet(); // Hello, Tom!
 ```
 
-### ✔️ Why it works:
+#### ✔️ Why it works:
 
 - The function is called as a **method**
 - JavaScript automatically binds `this` to `obj`
 
 ---
 
-## ⚠️ Important Notes
+### ⚠️ Important Notes
 
 | Method      | Permanent Fix? | Description                                   |
 | ----------- | -------------- | --------------------------------------------- |
@@ -464,7 +464,7 @@ obj.greet(); // Hello, Tom!
 
 ---
 
-## 🧠 Key Takeaways
+### 🧠 Key Takeaways
 
 - Detaching a method = **losing its `this` context**
 - `this` depends on the **call site**
@@ -474,16 +474,16 @@ obj.greet(); // Hello, Tom!
 
 ---
 
-## 🎯 Final Insight
+### 🎯 Final Insight
 
 > When you extract a method from an object,
 > you also extract it from its `this`.
 
 ---
 
-# 📘 Task 4 – `this` Lost Inside a Nested Function
+## 📘 Task 4 – `this` Lost Inside a Nested Function
 
-## 🚀 Problem Statement
+### 🚀 Problem Statement
 
 Consider the following code:
 
@@ -501,7 +501,7 @@ const user = {
 user.greet();
 ```
 
-### ❌ Output:
+#### ❌ Output:
 
 ```
 Hello, undefined!
@@ -509,15 +509,15 @@ Hello, undefined!
 
 ---
 
-## 🔍 Why Does This Happen?
+### 🔍 Why Does This Happen?
 
-### ⚠️ Key Rule:
+#### ⚠️ Key Rule:
 
 > `this` depends on **how a function is called**, not where it is defined.
 
 ---
 
-## 🧠 Step-by-Step Explanation
+### 🧠 Step-by-Step Explanation
 
 1. `greet()` is called as a method:
 
@@ -553,7 +553,7 @@ this.name; // undefined
 
 ---
 
-## ❗ Root Cause
+### ❗ Root Cause
 
 The `inner` function is **not a method of the object**.
 
@@ -564,11 +564,11 @@ It does **not inherit `this`** from `greet()` because:
 
 ---
 
-## ✅ Solutions
+### ✅ Solutions
 
 ---
 
-### ✔️ Solution 1: Use an Arrow Function (Best & Modern)
+#### ✔️ Solution 1: Use an Arrow Function (Best & Modern)
 
 ```js
 const user = {
@@ -584,7 +584,7 @@ const user = {
 user.greet(); // Hello, Alex!
 ```
 
-### ✔️ Why it works:
+#### ✔️ Why it works:
 
 - Arrow functions **do NOT have their own `this`**
 - They inherit `this` from `greet()`
@@ -592,7 +592,7 @@ user.greet(); // Hello, Alex!
 
 ---
 
-### ✔️ Solution 2: Use `bind`
+#### ✔️ Solution 2: Use `bind`
 
 ```js
 const user = {
@@ -609,13 +609,13 @@ const user = {
 user.greet(); // Hello, Alex!
 ```
 
-### ✔️ Why it works:
+#### ✔️ Why it works:
 
 - `bind(this)` permanently sets `this` to `user`
 
 ---
 
-### ✔️ Solution 3: Store `this` in a Variable (Classic Approach)
+#### ✔️ Solution 3: Store `this` in a Variable (Classic Approach)
 
 ```js
 const user = {
@@ -632,13 +632,13 @@ const user = {
 user.greet(); // Hello, Alex!
 ```
 
-### ✔️ Why it works:
+#### ✔️ Why it works:
 
 - `self` keeps a reference to the correct context
 
 ---
 
-## ⚠️ Important Comparison
+### ⚠️ Important Comparison
 
 | Approach         | Has Own `this`? | Behavior                  |
 | ---------------- | --------------- | ------------------------- |
@@ -647,7 +647,7 @@ user.greet(); // Hello, Alex!
 
 ---
 
-## 🧠 Key Takeaways
+### 🧠 Key Takeaways
 
 - Nested regular functions **lose `this`**
 - Arrow functions help **preserve `this`**
@@ -656,15 +656,15 @@ user.greet(); // Hello, Alex!
 
 ---
 
-## 🎯 Final Insight
+### 🎯 Final Insight
 
 > A function inside a method is **NOT automatically part of the object**.
 
 ---
 
-# 📘 Task 5 – Constructor Function and `this` in JavaScript
+## 📘 Task 5 – Constructor Function and `this` in JavaScript
 
-## 🚀 Problem Statement
+### 🚀 Problem Statement
 
 Create a **constructor function** called `Sports` that:
 
@@ -674,9 +674,9 @@ Create a **constructor function** called `Sports` that:
 
 ---
 
-## 🧠 Understanding Constructor Functions
+### 🧠 Understanding Constructor Functions
 
-### ⚠️ Key Rule:
+#### ⚠️ Key Rule:
 
 > When a function is called with the `new` keyword, JavaScript:
 
@@ -687,7 +687,7 @@ Create a **constructor function** called `Sports` that:
 
 ---
 
-## ✅ Basic Implementation
+### ✅ Basic Implementation
 
 ````js
 function Sports(name, numberOfPlayers) {
@@ -713,7 +713,7 @@ Sports { name: 'Basketball', numberOfPlayers: 5 }
 
 ---
 
-## 🧾 Logging Details in a Readable Format
+### 🧾 Logging Details in a Readable Format
 
 ```js
 console.log(`Sport: ${soccer.name}, Players: ${soccer.numberOfPlayers}`);
@@ -724,7 +724,7 @@ console.log(
 
 ---
 
-## ✅ Adding Methods (Best Practice: Using Prototype)
+### ✅ Adding Methods (Best Practice: Using Prototype)
 
 > ⚠️ Note : we haven't learned about this yet in day 13. but for this problem, i have to share here. I used to evaluate my solution compare with more efficient solution and it's fine to include and share here. Because i made the common mistake that a lot of programmers also made.
 
@@ -739,7 +739,7 @@ basketball.getDetails();
 
 ---
 
-### ✔️ Why use `prototype`?
+#### ✔️ Why use `prototype`?
 
 - Avoids duplicating the method for every instance
 - Saves memory
@@ -747,9 +747,9 @@ basketball.getDetails();
 
 ---
 
-## ⚠️ Common Mistake
+### ⚠️ Common Mistake
 
-### ❌ Defining methods inside constructor
+#### ❌ Defining methods inside constructor
 
 ```js
 function Sports(name, numberOfPlayers) {
@@ -762,14 +762,14 @@ function Sports(name, numberOfPlayers) {
 }
 ```
 
-### ⚠️ Problem:
+#### ⚠️ Problem:
 
 - Each instance gets its **own copy** of the method
 - Inefficient for memory
 
 ---
 
-## 🧠 Key Takeaways
+### 🧠 Key Takeaways
 
 - `this` inside a constructor refers to the **newly created object**
 - Always use `new` when calling constructor functions
@@ -778,21 +778,21 @@ function Sports(name, numberOfPlayers) {
 
 ---
 
-## 🎯 Final Insight
+### 🎯 Final Insight
 
 > Constructor functions allow you to create multiple objects with the same structure using `this` and `new`.
 
 ---
 
-# 📘 Task 6 – Method Borrowing in JavaScript
+## 📘 Task 6 – Method Borrowing in JavaScript
 
-## 🚀 Objective
+### 🚀 Objective
 
 Attach or reuse a method from one object (`car1`) on another object (`car2`) so that it correctly uses `car2`'s data.
 
 ---
 
-## 🧾 Given Code
+### 🧾 Given Code
 
 ````js
 const car1 = {
@@ -811,30 +811,31 @@ const car2 = {
 
 ---
 
-## ❓ Problem
+### ❓ Problem
 
 How can we use `car1.describe()` to describe `car2`?
 
 ---
 
-## 🧠 Key Concept: Method Borrowing
+### 🧠 Key Concept: Method Borrowing
 
 > Method borrowing allows one object to use a method from another object by controlling the value of `this`.
 
 ---
 
-## ✅ Solutions
+### ✅ Solutions
 
 ---
 
-### ✔️ Solution 1: Using `call`
+#### ✔️ Solution 1: Using `call`
 
 ```js
 car1.describe.call(car2);
 // Output: This car is a BMW X1.
+
 ````
 
-### 💡 Why it works:
+#### 💡 Why it works:
 
 - `call()` invokes the function immediately
 - Sets `this` to `car2`
@@ -848,7 +849,7 @@ car1.describe.apply(car2);
 // Output: This car is a BMW X1.
 ```
 
-### 💡 Why it works:
+#### 💡 Why it works:
 
 - Similar to `call()`
 - Accepts arguments as an array
@@ -863,7 +864,7 @@ describeCar2();
 // Output: This car is a BMW X1.
 ```
 
-### 💡 Why it works:
+#### 💡 Why it works:
 
 - Returns a new function
 - Permanently binds `this` to `car2`
@@ -878,7 +879,7 @@ car2.describe();
 // Output: This car is a BMW X1.
 ```
 
-### 💡 Why it works:
+#### 💡 Why it works:
 
 - The method is now part of `car2`
 - Called as a method → `this` becomes `car2`
@@ -907,7 +908,7 @@ car2.describe();
 
 ---
 
-## ⚠️ Important Comparison
+### ⚠️ Important Comparison
 
 | Method     | Executes Immediately     | Permanent |
 | ---------- | ------------------------ | --------- |
@@ -918,7 +919,7 @@ car2.describe();
 
 ---
 
-## 🧠 Key Takeaways
+### 🧠 Key Takeaways
 
 - `this` depends on **how a function is called**
 - Methods can be reused across objects
@@ -927,15 +928,15 @@ car2.describe();
 
 ---
 
-## 🎯 Final Insight
+### 🎯 Final Insight
 
 > You don’t need to rewrite logic—just reuse it by controlling `this`.
 
 ---
 
-# 📘 Task 7 – Understanding `this` in Regular vs Arrow Functions
+## 📘 Task 7 – Understanding `this` in Regular vs Arrow Functions
 
-## 🚀 Problem Statement
+### 🚀 Problem Statement
 
 Analyze the following code and determine the output:
 
@@ -967,15 +968,15 @@ What will be the output?
 
 ---
 
-## ✅ Correct Answer
+### ✅ Correct Answer
 
 **B: `"Charlie"` and `undefined`**
 
 ---
 
-## 🧠 Explanation
+### 🧠 Explanation
 
-### ✔️ 1. Regular Method (`sayHello`)
+#### ✔️ 1. Regular Method (`sayHello`)
 
 ```js
 person.sayHello();
@@ -992,7 +993,7 @@ this.name; // "Charlie"
 
 ---
 
-### ❌ 2. Arrow Function (`sayHelloArrow`)
+#### ❌ 2. Arrow Function (`sayHelloArrow`)
 
 ```js
 person.sayHelloArrow();
@@ -1003,7 +1004,7 @@ person.sayHelloArrow();
 
 ---
 
-### 🧠 What is the outer scope here?
+#### 🧠 What is the outer scope here?
 
 - The arrow function is defined in the **global scope**
 - So it inherits:
@@ -1018,7 +1019,7 @@ this.name; // undefined
 
 ---
 
-## ⚠️ Key Difference
+### ⚠️ Key Difference
 
 | Function Type    | Has Own `this`? | Value of `this`               |
 | ---------------- | --------------- | ----------------------------- |
@@ -1027,14 +1028,14 @@ this.name; // undefined
 
 ---
 
-## 💡 Important Insight
+### 💡 Important Insight
 
 > Even though `sayHelloArrow` is inside an object,
 > it does **NOT** make it a method in terms of `this`.
 
 ---
 
-## 🧠 Key Takeaways
+### 🧠 Key Takeaways
 
 - Regular methods:
   - `this` → the object
@@ -1046,7 +1047,7 @@ this.name; // undefined
 
 ---
 
-## 🎯 Final Insight
+### 🎯 Final Insight
 
 > Arrow functions ignore how they are called —
 > they always use the `this` from where they are defined.
