@@ -574,7 +574,7 @@ Always runs → used for cleanup
 
 | Concept        | Description                                                           | When to Use                                                         | Example                                                        |
 | -------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- |
-| `try`          | Defines a block of code to test for errors                            | When you want to safely execute code that might fail                | `js try { JSON.parse(data); } `                                |
+| `try`          | Defines a block of code to test for errors                            | When you want to safely execute code that might fail                | ```js try { JSON.parse(data); } ```                                |
 | `catch`        | Handles errors thrown in the `try` block                              | When you want to prevent program crash and handle errors gracefully | `js catch (err) { console.log(err.message); } `                |
 | `throw`        | Manually creates and throws an error                                  | When you want to enforce rules or validate data                     | `js if (!user) throw new Error("User not found"); `            |
 | `rethrow`      | Throws the error again after catching it                              | When you want to handle partially, then pass error up               | `js catch (err) { if (err instanceof TypeError) throw err; } ` |
