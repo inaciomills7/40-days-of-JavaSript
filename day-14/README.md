@@ -574,13 +574,13 @@ Always runs → used for cleanup
 
 | Concept        | Description                                                           | When to Use                                                         | Example                                                        |
 | -------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- |
-| `try`          | Defines a block of code to test for errors                            | When you want to safely execute code that might fail                | ```js try { JSON.parse(data); } ```                                |
-| `catch`        | Handles errors thrown in the `try` block                              | When you want to prevent program crash and handle errors gracefully | `js catch (err) { console.log(err.message); } `                |
-| `throw`        | Manually creates and throws an error                                  | When you want to enforce rules or validate data                     | `js if (!user) throw new Error("User not found"); `            |
-| `rethrow`      | Throws the error again after catching it                              | When you want to handle partially, then pass error up               | `js catch (err) { if (err instanceof TypeError) throw err; } ` |
-| `finally`      | Runs code after `try` and `catch`, regardless of success or failure   | For cleanup tasks (closing resources, logging, etc.)                | `js finally { console.log("Done"); } `                         |
-| `Error Object` | Built-in object containing error details (`name`, `message`, `stack`) | When you need structured error info                                 | `js const err = new Error("Something went wrong"); `           |
-| `instanceof`   | Checks the type of an error (or object)                               | When handling different types of errors differently                 | `js if (err instanceof SyntaxError) { ... } `                  |
+| `try`          | Defines a block of code to test for errors                            | When you want to safely execute code that might fail                | ` try { JSON.parse(data); } `                                |
+| `catch`        | Handles errors thrown in the `try` block                              | When you want to prevent program crash and handle errors gracefully | ` catch (err) { console.log(err.message); } `                |
+| `throw`        | Manually creates and throws an error                                  | When you want to enforce rules or validate data                     | ` if (!user) throw new Error("User not found"); `            |
+| `rethrow`      | Throws the error again after catching it                              | When you want to handle partially, then pass error up               | ` catch (err) { if (err instanceof TypeError) throw err; } ` |
+| `finally`      | Runs code after `try` and `catch`, regardless of success or failure   | For cleanup tasks (closing resources, logging, etc.)                | ` finally { console.log("Done"); } `                         |
+| `Error Object` | Built-in object containing error details (`name`, `message`, `stack`) | When you need structured error info                                 | ` const err = new Error("Something went wrong"); `           |
+| `instanceof`   | Checks the type of an error (or object)                               | When handling different types of errors differently                 | ` if (err instanceof SyntaxError) { ... } `                  |
 
 ---
 
