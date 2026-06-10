@@ -143,6 +143,16 @@ var isRich = function () {
   - If declared with `var` → initialized as `undefined`
   - Calling before assignment → ❌ error
 
+- In JavaScript, "fully hoisted" means that both the declaration of an identifier and its complete value or implementation are made available at the top of their scope during the compilation phase.
+
+  This allows you to safely invoke or execute that entity in your code before the line where it is actually written.
+  - The Core Difference: Fully Hoisted vs. Partially Hoisted
+
+    To truly understand full hoisting, it helps to contrast it with partial hoisting behaviors:
+    - Fully Hoisted (Function Declarations): The JavaScript engine allocates memory for both the function name and its entire body. You can call the function anywhere in its scope.
+    - Partially Hoisted (var variables): Only the variable name is hoisted to the top, while its assignment stays in place. It automatically initializes with a value of undefined. If you call it early, you get undefined, not a crash.
+    - Hoisted but Uninitialized (let and const): The variables are tracked by the engine but are not initialized at all. They sit in a Temporal Dead Zone (TDZ). Accessing them before their declaration line throws a ReferenceError
+
 ---
 
 ## 🔑 **Key Differences Summary**
